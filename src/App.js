@@ -10,8 +10,9 @@ import './App.css';
 
 const AppContainer = styled.div `
 margin: 0 auto ;
-border: 2px solid yellow ;
 display: flex;
+flex-direction: row-wrap ;
+justify-content: center ;
 `
 
 class App extends Component {
@@ -31,7 +32,8 @@ class App extends Component {
     return (
         <AppContainer className="App">
           <Route exact path='/' component={Home} />
-          <Route render={() => <AvengersList data={this.state.Data} />} path='/avengers'  />
+          <Route exact render={() => <AvengersList data={this.state.Data} match={ this.props.match } />} path='/avengers'  />
+          <Route path='/avengers/:id'></Route>
         </AppContainer>
     );
   }

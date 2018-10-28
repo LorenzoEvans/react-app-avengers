@@ -2,7 +2,7 @@
 
 export default [
     {
-      id: 1,
+      id: '1',
       name: 'Iron Man',
       nickname: 'Armored Avenger',
       description:
@@ -125,7 +125,7 @@ export default [
     },
     {
       id: 8,
-      name: 'Black Panter',
+      name: 'Black Panther',
       nickname: 'King of Wakanda',
       description:
         'T’Challa is the king of the secretive and highly advanced African nation of Wakanda - as well as the powerful warrior known as the Black Panther.',
