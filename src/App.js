@@ -7,7 +7,6 @@ import AvengersList from './Components/AvengersList';
 import Avenger from './Components/Avenger';
 import AvengerData from './AvengersData'
 import './App.css';
-import AvengerInfo from './Components/AvengerInfo';
 
 const AppContainer = styled.div `
 margin: 0 auto ;
@@ -31,10 +30,23 @@ class App extends Component {
   }
   render() {
     return (
+       
         <AppContainer className="App">
+        <ul>
+          <li>
+            <NavLink exact to='/' >
+            Home
+            </NavLink>
+            {' '}
+            <NavLink to='/avengers'>
+            Avengers
+            </NavLink>
+          </li>
+        </ul>
         <Route exact path='/' component={Home} />
         <Route exact path='/avengers' render={(props) => <AvengersList {...props} data={this.state.Data}  />}/>
-        <Route path='/avengers/:id' render={(props) => <Avenger {...props} />} />
+        <Route path='/avengers/:id' render={(props) => <Avenger {...props}  data={this.state.Data}/>} />
+        <Route path='/avengers/:id/avengerinfo'/>
         </AppContainer>
     );
   }

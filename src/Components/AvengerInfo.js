@@ -3,7 +3,9 @@ import React from 'react'
 const AvengerInfo = (props) => {
     return(
         <div>
-            {props.avenger.img}
+            {props.data.map((avenger,index) => <div>
+                {avenger.description}
+            </div>)}
         </div>
     )
 }
