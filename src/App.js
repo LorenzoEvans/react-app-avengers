@@ -7,6 +7,7 @@ import AvengersList from './Components/AvengersList';
 import Avenger from './Components/Avenger';
 import AvengerData from './AvengersData'
 import './App.css';
+import AvengerInfo from './Components/AvengerInfo';
 
 const AppContainer = styled.div `
 margin: 0 auto ;
@@ -31,9 +32,9 @@ class App extends Component {
   render() {
     return (
         <AppContainer className="App">
-          <Route exact path='/' component={Home} />
-          <Route exact render={() => <AvengersList data={this.state.Data} match={ this.props.match } />} path='/avengers'  />
-          <Route path='/avengers/:id'></Route>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/avengers' render={(props) => <AvengersList {...props} data={this.state.Data}  />}/>
+        <Route path='/avengers/:id' render={(props) => <Avenger {...props} />} />
         </AppContainer>
     );
   }

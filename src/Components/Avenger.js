@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import AvengerInfo from './AvengerInfo'
+import AvengerMovies from './AvengerMovies'
+
+
 const Div = styled.div `
 font-family: 'Permanent Marker'
 padding-top: 40px;
@@ -48,16 +52,20 @@ font-size: 2.1rem ;
         // )}
         // </Div>
 const Avenger = (props) => {
+    const id = props.match.params.id
     return(
         <>
-        {/* {props.avenger.map((avenger, id) =>
-            <Div></Div>
-            )} */}
-            <Img alt="" src={props.avenger.thumbnail}>
+        
+            <Img alt="" src={props.thumbnail}>
 
             </Img>
-            <H1>{props.avenger.name}</H1>
-            <H2>{props.avenger.nickname}</H2>
+            <H1>
+            <Link to={`/avengers/${props.id}/avengerinfo`}>
+               {props.name} 
+            </Link>
+            
+            </H1>
+            <H2>{props.nickname}</H2>
             </>
     )
 }

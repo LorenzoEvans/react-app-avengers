@@ -19,7 +19,18 @@ class AvengersList extends React.Component {
     return(
         <div>
         <Link to="/" >Exit</Link>
-      {this.props.data.map((avenger, index) => <Avenger key={index} avenger={avenger} />)}
+      {this.props.data.map((avenger, index) => 
+      <div> 
+      <Avenger 
+      {...this.props} 
+      key={index} 
+      id={avenger.id} 
+      avenger={avenger} 
+      thumbnail={avenger.thumbnail}/> 
+      {avenger.name}:
+      {' '}
+      {avenger.nickname}
+      </div>)}
       
         </div>
     )
